@@ -24,7 +24,24 @@ fn string_test_2() {
     // println!("После: {}", s)
 }
 
+fn copy_string_test_1() {
+    let s = String::from("Hello");
+    let s2 = s;
+    // println!("s: {}", s);  // ошибка: borrow of moved value: `s`
+    println!("s2: {}", s2);
+}
+
+fn copy_string_test_2() {
+    let s = String::from("Hello");
+    let s2 = s.clone();
+    println!("s: {}", s); // ошибка: borrow of moved value: `s`
+    println!("s2: {}", s2);
+}
+
 fn main() {
     scope_test_1();
     string_test_1();
+    string_test_2();
+    copy_string_test_1();
+    copy_string_test_2();
 }
