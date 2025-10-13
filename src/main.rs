@@ -15,6 +15,15 @@ fn string_test_1() {
     println!("После: {}", s)
 }
 
+fn string_test_2() {
+    {
+        let mut s = String::from("Hello");
+        println!("До: {}", s);
+    };
+    // s.push_str(", world"); // ошибка not found in this scope
+    // println!("После: {}", s)
+}
+
 fn main() {
     scope_test_1();
     string_test_1();
