@@ -38,21 +38,37 @@
 //     println!("s2: {}", s2);
 // }
 
-fn func_scopes_test_1() {
-    let s = String::from("Hello");
-    takew_ownership(s);
+// fn func_scopes_test_1() {
+//     let s = String::from("Hello");
+//     takew_ownership(s);
+//
+//     let x = 5;
+//     make_copy(x);
+//     println!("x: {}", x);
+// }
+//
+// fn takew_ownership(some_string: String) {
+//     println!("{}", some_string);
+// }
+//
+// fn make_copy(some_integer: i32) {
+//     println!("{}", some_integer);
+// }
+//
 
-    let x = 5;
-    make_copy(x);
-    println!("x: {}", x);
+fn gives_ownership() -> String {
+    let some_string = String::from("Hello");
+    some_string
 }
 
-fn takew_ownership(some_string: String) {
-    println!("{}", some_string);
+fn takes_and_gives_back(some_str: String) -> String {
+    some_str
 }
 
-fn make_copy(some_integer: i32) {
-    println!("{}", some_integer);
+fn func_scopes_test_2() {
+    let s1 = gives_ownership();
+    let s2 = String::from("Hello");
+    let s3 = takes_and_gives_back(s2);
 }
 
 fn main() {
@@ -61,5 +77,6 @@ fn main() {
     // string_test_2();
     // copy_string_test_1();
     // copy_string_test_2();
-    func_scopes_test_1();
+    // func_scopes_test_1();
+    func_scopes_test_2();
 }
