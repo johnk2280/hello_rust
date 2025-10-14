@@ -71,15 +71,14 @@
 //     let s3 = takes_and_gives_back(s2);
 // }
 
-fn calculate_len(some_str: String) -> (String, usize) {
-    let len = some_str.len();
-    (some_str, len)
+fn calculate_len(some_str: &String) -> usize {
+    some_str.len()
 }
 
 fn returning_params() {
     let s1 = String::from("Hello");
-    let (s2, len) = calculate_len(s1);
-    println!("Длина строки `{}` равна {}", s2, len);
+    let len = calculate_len(&s1);
+    println!("Длина строки `{}` равна {}", s1, len);
 }
 
 fn main() {
