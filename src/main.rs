@@ -56,19 +56,30 @@
 // }
 //
 
-fn gives_ownership() -> String {
-    let some_string = String::from("Hello");
-    some_string
+// fn gives_ownership() -> String {
+//     let some_string = String::from("Hello");
+//     some_string
+// }
+//
+// fn takes_and_gives_back(some_str: String) -> String {
+//     some_str
+// }
+//
+// fn func_scopes_test_2() {
+//     let s1 = gives_ownership();
+//     let s2 = String::from("Hello");
+//     let s3 = takes_and_gives_back(s2);
+// }
+
+fn calculate_len(some_str: String) -> (String, usize) {
+    let len = some_str.len();
+    (some_str, len)
 }
 
-fn takes_and_gives_back(some_str: String) -> String {
-    some_str
-}
-
-fn func_scopes_test_2() {
-    let s1 = gives_ownership();
-    let s2 = String::from("Hello");
-    let s3 = takes_and_gives_back(s2);
+fn returning_params() {
+    let s1 = String::from("Hello");
+    let (s2, len) = calculate_len(s1);
+    println!("Длина строки `{}` равна {}", s2, len);
 }
 
 fn main() {
@@ -78,5 +89,6 @@ fn main() {
     // copy_string_test_1();
     // copy_string_test_2();
     // func_scopes_test_1();
-    func_scopes_test_2();
+    // func_scopes_test_2();
+    returning_params();
 }
