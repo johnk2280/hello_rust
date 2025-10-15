@@ -71,14 +71,23 @@
 //     let s3 = takes_and_gives_back(s2);
 // }
 
-fn calculate_len(some_str: &String) -> usize {
-    some_str.len()
+// fn calculate_len(some_str: &String) -> usize {
+//     some_str.len()
+// }
+//
+// fn returning_params() {
+//     let s1 = String::from("Hello");
+//     let len = calculate_len(&s1);
+//     println!("Длина строки `{}` равна {}", s1, len);
+// }
+
+fn calucalete_area_tuple() {
+    let rect_1 = (30, 50);
+    println!("Площадь прямоугольника равна {} кв. пикселей", area(rect_1));
 }
 
-fn returning_params() {
-    let s1 = String::from("Hello");
-    let len = calculate_len(&s1);
-    println!("Длина строки `{}` равна {}", s1, len);
+fn area(dimensions: (u32, u32)) -> u32 {
+    dimensions.0 * dimensions.1
 }
 
 fn main() {
@@ -89,5 +98,6 @@ fn main() {
     // copy_string_test_2();
     // func_scopes_test_1();
     // func_scopes_test_2();
-    returning_params();
+    // returning_params();
+    calucalete_area_tuple();
 }
