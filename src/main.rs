@@ -96,20 +96,38 @@ struct Rectangle {
     height: u32,
 }
 
-fn calucalete_area_struct() {
+// fn calucalete_area_struct() {
+//     let rect_1 = Rectangle {
+//         width: 30,
+//         height: 50,
+//     };
+//     println!(
+//         "Площадь прямоугольника {:#?} равна {} кв. пикселей",
+//         rect_1,
+//         area(&rect_1),
+//     );
+// }
+//
+// fn area(rect: &Rectangle) -> u32 {
+//     rect.width * rect.height
+// }
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
+fn calucalete_area_struct_with_method() {
     let rect_1 = Rectangle {
         width: 30,
         height: 50,
     };
     println!(
-        "Площадь прямоугольника {:#?} равна {} кв. пикселей",
+        "Площадь прямоугольника {:?} равна {} кв. пикселей",
         rect_1,
-        area(&rect_1),
+        rect_1.area(),
     );
-}
-
-fn area(rect: &Rectangle) -> u32 {
-    rect.width * rect.height
 }
 
 fn main() {
@@ -121,5 +139,5 @@ fn main() {
     // func_scopes_test_1();
     // func_scopes_test_2();
     // returning_params();
-    calucalete_area_struct();
+    calucalete_area_struct_with_method();
 }
