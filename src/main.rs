@@ -90,6 +90,7 @@
 //     dimensions.0 * dimensions.1
 // }
 
+#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32,
@@ -101,8 +102,9 @@ fn calucalete_area_struct() {
         height: 50,
     };
     println!(
-        "Площадь прямоугольника равна {} кв. пикселей",
-        area(&rect_1)
+        "Площадь прямоугольника {:#?} равна {} кв. пикселей",
+        rect_1,
+        area(&rect_1),
     );
 }
 
