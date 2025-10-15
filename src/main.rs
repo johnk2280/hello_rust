@@ -81,13 +81,33 @@
 //     println!("Длина строки `{}` равна {}", s1, len);
 // }
 
-fn calucalete_area_tuple() {
-    let rect_1 = (30, 50);
-    println!("Площадь прямоугольника равна {} кв. пикселей", area(rect_1));
+// fn calucalete_area_tuple() {
+//     let rect_1 = (30, 50);
+//     println!("Площадь прямоугольника равна {} кв. пикселей", area(rect_1));
+// }
+//
+// fn area(dimensions: (u32, u32)) -> u32 {
+//     dimensions.0 * dimensions.1
+// }
+
+struct Rectangle {
+    width: u32,
+    height: u32,
 }
 
-fn area(dimensions: (u32, u32)) -> u32 {
-    dimensions.0 * dimensions.1
+fn calucalete_area_struct() {
+    let rect_1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+    println!(
+        "Площадь прямоугольника равна {} кв. пикселей",
+        area(&rect_1)
+    );
+}
+
+fn area(rect: &Rectangle) -> u32 {
+    rect.width * rect.height
 }
 
 fn main() {
@@ -99,5 +119,5 @@ fn main() {
     // func_scopes_test_1();
     // func_scopes_test_2();
     // returning_params();
-    calucalete_area_tuple();
+    calucalete_area_struct();
 }
