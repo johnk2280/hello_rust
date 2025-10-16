@@ -90,11 +90,11 @@
 //     dimensions.0 * dimensions.1
 // }
 
-#[derive(Debug)]
-struct Rectangle {
-    width: u32,
-    height: u32,
-}
+// #[derive(Debug)]
+// struct Rectangle {
+//     width: u32,
+//     height: u32,
+// }
 
 // fn calucalete_area_struct() {
 //     let rect_1 = Rectangle {
@@ -112,48 +112,60 @@ struct Rectangle {
 //     rect.width * rect.height
 // }
 
-impl Rectangle {
-    fn area(&self) -> u32 {
-        self.width * self.height
-    }
+// impl Rectangle {
+//     fn area(&self) -> u32 {
+//         self.width * self.height
+//     }
+//
+//     fn can_hold(&self, other: &Rectangle) -> bool {
+//         self.width > other.width && self.height > other.height
+//     }
+// }
+//
+// fn calucalete_area_struct_with_method() {
+//     let rect_1 = Rectangle {
+//         width: 30,
+//         height: 50,
+//     };
+//     let rect_2 = Rectangle {
+//         width: 10,
+//         height: 40,
+//     };
+//     let rect_3 = Rectangle {
+//         width: 60,
+//         height: 70,
+//     };
+//
+//     println!(
+//         "Площадь прямоугольника {:?} равна {} кв. пикселей",
+//         rect_1,
+//         rect_1.area(),
+//     );
+//
+//     println!(
+//         "Может ли прямоугольник {:?} содержать в себе прямоугольник {:?}? Ответ: {}",
+//         rect_1,
+//         rect_2,
+//         rect_1.can_hold(&rect_2)
+//     );
+//     println!(
+//         "Может ли прямоугольник {:?} содержать в себе прямоугольник {:?}? Ответ: {}",
+//         rect_1,
+//         rect_3,
+//         rect_1.can_hold(&rect_3)
+//     );
+// }
 
-    fn can_hold(&self, other: &Rectangle) -> bool {
-        self.width > other.width && self.height > other.height
-    }
+#[derive(Debug)]
+enum IpAddrKind {
+    V4,
+    V6,
 }
 
-fn calucalete_area_struct_with_method() {
-    let rect_1 = Rectangle {
-        width: 30,
-        height: 50,
-    };
-    let rect_2 = Rectangle {
-        width: 10,
-        height: 40,
-    };
-    let rect_3 = Rectangle {
-        width: 60,
-        height: 70,
-    };
-
-    println!(
-        "Площадь прямоугольника {:?} равна {} кв. пикселей",
-        rect_1,
-        rect_1.area(),
-    );
-
-    println!(
-        "Может ли прямоугольник {:?} содержать в себе прямоугольник {:?}? Ответ: {}",
-        rect_1,
-        rect_2,
-        rect_1.can_hold(&rect_2)
-    );
-    println!(
-        "Может ли прямоугольник {:?} содержать в себе прямоугольник {:?}? Ответ: {}",
-        rect_1,
-        rect_3,
-        rect_1.can_hold(&rect_3)
-    );
+fn enum_test_1() -> (IpAddrKind, IpAddrKind) {
+    let four = IpAddrKind::V4;
+    let six = IpAddrKind::V6;
+    (four, six)
 }
 
 fn main() {
@@ -165,5 +177,11 @@ fn main() {
     // func_scopes_test_1();
     // func_scopes_test_2();
     // returning_params();
-    calucalete_area_struct_with_method();
+    // calucalete_area_struct_with_method();
+
+    println!(
+        "Значения перечисления {:?} {:?}",
+        enum_test_1().0,
+        enum_test_1().1
+    )
 }
