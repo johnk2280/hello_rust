@@ -162,11 +162,11 @@ enum IpAddrKind {
     V6,
 }
 
-#[derive(Debug)]
-struct IpAddr {
-    version: IpAddrKind,
-    address: String,
-}
+// #[derive(Debug)]
+// struct IpAddr {
+//     version: IpAddrKind,
+//     address: String,
+// }
 
 // fn enum_test_1() -> (IpAddrKind, IpAddrKind) {
 //     let four = IpAddrKind::V4;
@@ -174,12 +174,23 @@ struct IpAddr {
 //     (four, six)
 // }
 
-fn enum_test_2() {
-    let localhost = IpAddr {
-        version: IpAddrKind::V4,
-        address: String::from("127.0.0.1"),
-    };
+// fn enum_test_2() {
+//     let localhost = IpAddr {
+//         version: IpAddrKind::V4,
+//         address: String::from("127.0.0.1"),
+//     };
+//
+//     println!("{:?}", localhost);
+// }
 
+#[derive(Debug)]
+enum IpAddr {
+    V4(String),
+    V6(String),
+}
+
+fn enum_test_3() {
+    let localhost = IpAddr::V4(String::from("127.0.0.1"));
     println!("{:?}", localhost);
 }
 
@@ -200,5 +211,6 @@ fn main() {
     //     enum_test_1().1
     // )
 
-    enum_test_2();
+    // enum_test_2();
+    enum_test_3();
 }
