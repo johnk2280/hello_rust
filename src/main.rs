@@ -162,10 +162,25 @@ enum IpAddrKind {
     V6,
 }
 
-fn enum_test_1() -> (IpAddrKind, IpAddrKind) {
-    let four = IpAddrKind::V4;
-    let six = IpAddrKind::V6;
-    (four, six)
+#[derive(Debug)]
+struct IpAddr {
+    version: IpAddrKind,
+    address: String,
+}
+
+// fn enum_test_1() -> (IpAddrKind, IpAddrKind) {
+//     let four = IpAddrKind::V4;
+//     let six = IpAddrKind::V6;
+//     (four, six)
+// }
+
+fn enum_test_2() {
+    let localhost = IpAddr {
+        version: IpAddrKind::V4,
+        address: String::from("127.0.0.1"),
+    };
+
+    println!("{:?}", localhost);
 }
 
 fn main() {
@@ -179,9 +194,11 @@ fn main() {
     // returning_params();
     // calucalete_area_struct_with_method();
 
-    println!(
-        "Значения перечисления {:?} {:?}",
-        enum_test_1().0,
-        enum_test_1().1
-    )
+    // println!(
+    //     "Значения перечисления {:?} {:?}",
+    //     enum_test_1().0,
+    //     enum_test_1().1
+    // )
+
+    enum_test_2();
 }
