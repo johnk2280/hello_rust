@@ -156,11 +156,11 @@
 //     );
 // }
 
-#[derive(Debug)]
-enum IpAddrKind {
-    V4,
-    V6,
-}
+// #[derive(Debug)]
+// enum IpAddrKind {
+//     V4,
+//     V6,
+// }
 
 // #[derive(Debug)]
 // struct IpAddr {
@@ -183,15 +183,25 @@ enum IpAddrKind {
 //     println!("{:?}", localhost);
 // }
 
-#[derive(Debug)]
-enum IpAddr {
-    V4(String),
-    V6(String),
-}
+// #[derive(Debug)]
+// enum IpAddr {
+//     V4(String),
+//     V6(String),
+// }
+//
+// fn enum_test_3() {
+//     let localhost = IpAddr::V4(String::from("127.0.0.1"));
+//     println!("{:?}", localhost);
+// }
+//
 
-fn enum_test_3() {
-    let localhost = IpAddr::V4(String::from("127.0.0.1"));
-    println!("{:?}", localhost);
+fn test_option_1() {
+    let some_number = Some(5);
+    let some_string = Some("Строковый литерал");
+    let absent_number: Option<i32> = None;
+    let concrete_number = 4;
+
+    println!("{}", some_number + concrete_number);
 }
 
 fn main() {
@@ -212,5 +222,7 @@ fn main() {
     // )
 
     // enum_test_2();
-    enum_test_3();
+    // enum_test_3();
+
+    test_option_1();
 }
