@@ -204,11 +204,17 @@
 //     println!("{}", some_number + concrete_number);
 // }
 
+#[derive(Debug)]
+enum UseState {
+    Alabama,
+    Alaska,
+}
+
 enum Coin {
     Penny,
     Nickel,
     Dime,
-    Quarter,
+    Quarter(UseState),
 }
 
 fn pattern_matching_test_1(coin: Coin) -> i8 {
@@ -216,7 +222,10 @@ fn pattern_matching_test_1(coin: Coin) -> i8 {
         Coin::Penny => 1,
         Coin::Nickel => 5,
         Coin::Dime => 10,
-        Coin::Quarter => 25,
+        Coin::Quarter(state) => {
+            println!("State: {:?}", state);
+            25
+        }
     }
 }
 
@@ -241,6 +250,6 @@ fn main() {
     // enum_test_3();
 
     // test_option_1();
-    let coin_ = pattern_matching_test_1(Coin::Quarter);
+    let coin_ = pattern_matching_test_1(Coin::Quarter(UseState::Alabama));
     println!("{}", coin_);
 }
