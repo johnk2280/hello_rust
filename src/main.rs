@@ -195,13 +195,29 @@
 // }
 //
 
-fn test_option_1() {
-    let some_number = Some(5);
-    let some_string = Some("Строковый литерал");
-    let absent_number: Option<i32> = None;
-    let concrete_number = 4;
+// fn test_option_1() {
+//     let some_number = Some(5);
+//     let some_string = Some("Строковый литерал");
+//     let absent_number: Option<i32> = None;
+//     let concrete_number = 4;
+//
+//     println!("{}", some_number + concrete_number);
+// }
 
-    println!("{}", some_number + concrete_number);
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter,
+}
+
+fn pattern_matching_test_1(coin: Coin) -> i8 {
+    match coin {
+        Coin::Penny => 1,
+        Coin::Nickel => 5,
+        Coin::Dime => 10,
+        Coin::Quarter => 25,
+    }
 }
 
 fn main() {
@@ -224,5 +240,7 @@ fn main() {
     // enum_test_2();
     // enum_test_3();
 
-    test_option_1();
+    // test_option_1();
+    let coin_ = pattern_matching_test_1(Coin::Quarter);
+    println!("{}", coin_);
 }
