@@ -229,18 +229,30 @@
 //     }
 // }
 
-fn plus_one(x: Option<i32>) -> Option<i32> {
-    match x {
-        None => None,
-        Some(i) => Some(i + 1),
-    }
-}
+// fn plus_one(x: Option<i32>) -> Option<i32> {
+//     match x {
+//         None => None,
+//         Some(i) => Some(i + 1),
+//     }
+// }
+//
+// fn test_option_2() {
+//     let five = Some(5);
+//     let six = plus_one(five);
+//     let none = plus_one(None);
+//     println!("{:?}, {:?}, {:?}", five, six, none);
+// }
 
-fn test_option_2() {
-    let five = Some(5);
-    let six = plus_one(five);
-    let none = plus_one(None);
-    println!("{:?}, {:?}, {:?}", five, six, none);
+fn iflet_test_1() {
+    let some_u8_value = Some(0u8);
+    match some_u8_value {
+        Some(3) => println!("три"),
+        _ => (),
+    } // =>     if let Some(3) = some_u8_value { println!("три") }
+
+    if let Some(3) = some_u8_value {
+        println!("три");
+    }
 }
 
 fn main() {
@@ -266,5 +278,5 @@ fn main() {
     // test_option_1();
     // let coin_ = pattern_matching_test_1(Coin::Quarter(UseState::Alabama));
     // println!("{}", coin_);
-    test_option_2();
+    // test_option_2();
 }
