@@ -1,3 +1,9 @@
+use tasks;
+
+fn main() {
+    tasks::main();
+}
+
 // fn scope_test_1() {
 //     let some_var = {
 //         let s = "Hello world";
@@ -243,40 +249,14 @@
 //     println!("{:?}, {:?}, {:?}", five, six, none);
 // }
 
-fn iflet_test_1() {
-    let some_u8_value = Some(0u8);
-    match some_u8_value {
-        Some(3) => println!("три"),
-        _ => (),
-    } // =>     if let Some(3) = some_u8_value { println!("три") }
-
-    if let Some(3) = some_u8_value {
-        println!("три");
-    }
-}
-
-fn main() {
-    // scope_test_1();
-    // string_test_1();
-    // string_test_2();
-    // copy_string_test_1();
-    // copy_string_test_2();
-    // func_scopes_test_1();
-    // func_scopes_test_2();
-    // returning_params();
-    // calucalete_area_struct_with_method();
-
-    // println!(
-    //     "Значения перечисления {:?} {:?}",
-    //     enum_test_1().0,
-    //     enum_test_1().1
-    // )
-
-    // enum_test_2();
-    // enum_test_3();
-
-    // test_option_1();
-    // let coin_ = pattern_matching_test_1(Coin::Quarter(UseState::Alabama));
-    // println!("{}", coin_);
-    // test_option_2();
-}
+// fn iflet_test_1() {
+//     let some_u8_value = Some(0u8);
+//     match some_u8_value {
+//         Some(3) => println!("три"),
+//         _ => (),
+//     } // =>     if let Some(3) = some_u8_value { println!("три") }
+//
+//     if let Some(3) = some_u8_value {
+//         println!("три");
+//     }
+// }

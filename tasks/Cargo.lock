@@ -3,12 +3,5 @@
 version = 4
 
 [[package]]
-name = "hello_rust"
-version = "0.1.0"
-dependencies = [
- "tasks",
-]
-
-[[package]]
 name = "tasks"
 version = "0.1.0"
