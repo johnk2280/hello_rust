@@ -1,1 +1,5 @@
-**/target
+/debug
+target
+debug
+target/
+./tasks/target/
